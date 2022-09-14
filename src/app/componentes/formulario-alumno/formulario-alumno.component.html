@@ -1,1 +1,54 @@
-<p>formulario-alumno works!</p>
+<section>
+  <fieldset>
+    <label for="">RUT del Alumno</label>
+    <input
+      type="text"
+      name="rut"
+      [value]="newAlumno.rut"
+      (input)="cambiarRut($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Nombre del Alumno</label>
+    <input
+      type="text"
+      name="nombre"
+      [value]="newAlumno.nombre"
+      (input)="cambiarNombre($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Apellido del Alumno</label>
+    <input
+      type="text"
+      name="apellido"
+      [value]="newAlumno.apellido"
+      (input)="cambiarApellido($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="">Edad del Alumno</label>
+    <input
+      type="number"
+      name="edad"
+      min="1"
+      max="130"
+      [value]="newAlumno.edad"
+      (input)="cambiarEdad($event)"
+    >
+  </fieldset>
+  <fieldset>
+    <label for="" >Seleccione la seccion</label>
+    <select
+      name="seccion"
+      [value]="newAlumno.seccion"
+      (change)="cambiarTipo($event)"
+    >
+      <option value="">section</option>
+
+    </select>
+  </fieldset>
+  <fieldset>
+    <button (click)="guardarElemento()">Guardar</button>
+  </fieldset>
+</section>

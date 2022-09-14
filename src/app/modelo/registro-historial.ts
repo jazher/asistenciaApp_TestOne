@@ -1,6 +1,6 @@
 import { Alumno } from "./alumno";
 
 export interface RegistroHistorial {
-  fecha_Hora: Date;
+  fechaHora: Date;
   alumno: Alumno;
 }

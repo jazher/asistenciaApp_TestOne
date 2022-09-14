@@ -1,4 +1,4 @@
-export interface TipoSeccion {
+export interface tipoSeccion {
   id?: number;
   nombre: string;
 }

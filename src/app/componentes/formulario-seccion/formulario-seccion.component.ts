@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { tipoSeccion } from '../../modelo/tipo-seccion';
 
 @Component({
   selector: 'app-formulario-seccion',
   templateUrl: './formulario-seccion.component.html',
   styleUrls: ['./formulario-seccion.component.scss']
 })
-export class FormularioSeccionComponent implements OnInit {
+export class FormularioSeccionComponent {
 
-  constructor() { }
+  @Output() public seccion = new EventEmitter<tipoSeccion>();
 
-  ngOnInit(): void {
-  }
+  public newSeccion: tipoSeccion = {
+     nombre: ''
+    }
+
+    public cambiarNombre(evento: Event): void{
+      const elemento = evento.target as HTMLInputElement;
+      this.newSeccion.nombre = elemento.value;
+    }
+
+    public guardarElemento():void{
+      const copia: tipoSeccion = {
+        ...this.newSeccion
+      };
+      this.seccion.emit(copia);
+      this.newSeccion.nombre = '';
+    }
 
 }
